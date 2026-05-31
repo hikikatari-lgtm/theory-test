@@ -43,6 +43,11 @@ export const CHAPTERS: Chapter[] = [
     title: "第2章: コード／テンション",
     description: "和音の構成とテンションの仕組み",
   },
+  {
+    id: "ch3",
+    title: "第3章: ダイアトニック・コード進行",
+    description: "長調・短調のダイアトニックコードと進行・終止",
+  },
 ];
 
 export const SECTIONS: Section[] = [
@@ -81,6 +86,24 @@ export const SECTIONS: Section[] = [
     chapter: "ch2",
     title: "総合問題",
     description: "コードとテンションの知識を組み合わせた応用",
+  },
+  {
+    id: "s7-major-diatonic",
+    chapter: "ch3",
+    title: "長音階上の和音",
+    description: "ダイアトニック四和音・主要和音・終止形",
+  },
+  {
+    id: "s8-minor-diatonic",
+    chapter: "ch3",
+    title: "短音階上の和音",
+    description: "短調のダイアトニックコードと終止・進行",
+  },
+  {
+    id: "s9-key-relations",
+    chapter: "ch3",
+    title: "平行・同主調と総合",
+    description: "調関係・借用和音・コード進行の分析",
   },
 ];
 
@@ -851,6 +874,415 @@ export const questions: Question[] = [
     correctIndex: 0,
     explanation:
       "add9 は三和音＋9th で7th なし(Cadd9=C-E-G-D)。一方 C9 は7th も含む(C-E-G-Bb-D)四和音以上です。",
+  },
+
+  // ==========================================================================
+  // 第3章 / セクション1: 長音階上の和音（15問）
+  // ==========================================================================
+  {
+    id: "s7-q01",
+    section: "s7-major-diatonic",
+    question: "Key=C の長音階上のダイアトニック四和音（I〜VII）で正しいのは？",
+    choices: [
+      "CM7, Dm7, Em7, FM7, GM7, Am7, Bm7",
+      "CM7, Dm7, Em7, FM7, G7, Am7, Bm7(b5)",
+      "C7, Dm7, Em7, F7, G7, Am7, Bm7(b5)",
+    ],
+    correctIndex: 1,
+    explanation:
+      "長音階のダイアトニック四和音は IM7, IIm7, IIIm7, IVM7, V7, VIm7, VIIm7(b5)。V 度だけがドミナント7thです。",
+  },
+  {
+    id: "s7-q02",
+    section: "s7-major-diatonic",
+    question: "長音階の II 度の和音の種類は？",
+    choices: ["メジャーセブンス", "マイナーセブンス", "ドミナントセブンス"],
+    correctIndex: 1,
+    explanation:
+      "長音階の II 度はマイナーセブンス（IIm7）。Key=C なら Dm7 です。",
+  },
+  {
+    id: "s7-q03",
+    section: "s7-major-diatonic",
+    question: "長音階の VII 度の和音の種類は？",
+    choices: ["m7(b5)", "dim7", "m7"],
+    correctIndex: 0,
+    explanation:
+      "VII 度はハーフディミニッシュ（m7b5）。根音から減5度＋短7度。Key=C なら Bm7(b5) です。",
+  },
+  {
+    id: "s7-q04",
+    section: "s7-major-diatonic",
+    question: "Key=G のダイアトニックコードで IV は？",
+    choices: ["Cm7", "CM7", "C7"],
+    correctIndex: 1,
+    explanation:
+      "Key=G の IV は C。長音階の IV 度はメジャーセブンスなので CM7 です。",
+  },
+  {
+    id: "s7-q05",
+    section: "s7-major-diatonic",
+    question: "Key=F の V7 は？",
+    choices: ["C7", "G7", "Bb7"],
+    correctIndex: 0,
+    explanation:
+      "Key=F の V 度は C。ドミナント7th なので C7 です。",
+  },
+  {
+    id: "s7-q06",
+    section: "s7-major-diatonic",
+    question: "トニック・サブドミナント・ドミナントの主要三和音の組み合わせは？",
+    choices: ["I, II, V", "I, IV, V", "I, IV, VI"],
+    correctIndex: 1,
+    explanation:
+      "主要三和音は I（トニック）、IV（サブドミナント）、V（ドミナント）の3つです。",
+  },
+  {
+    id: "s7-q07",
+    section: "s7-major-diatonic",
+    question: "ドミナント→トニックの終止形の名称は？",
+    choices: [
+      "正格終止（オーセンティック・ケーデンス）",
+      "変格終止（プラガル・ケーデンス）",
+      "半終止（ハーフ・ケーデンス）",
+    ],
+    correctIndex: 0,
+    explanation:
+      "V→I は正格終止で最も強い解決感。IV→I は変格終止（アーメン終止）です。",
+  },
+  {
+    id: "s7-q08",
+    section: "s7-major-diatonic",
+    question: "偽終止（ディセプティブ・ケーデンス）とは？",
+    choices: ["IV→I への進行", "V→VI への進行", "I→V への進行"],
+    correctIndex: 1,
+    explanation:
+      "V→VI は偽終止。I に解決すると見せかけて VI に進み、意外性を生みます。",
+  },
+  {
+    id: "s7-q09",
+    section: "s7-major-diatonic",
+    question: "半終止とは？",
+    choices: ["V で止まる終止", "I で止まる終止", "IV で止まる終止"],
+    correctIndex: 0,
+    explanation:
+      "半終止はフレーズが V（ドミナント）で止まる終止。未解決の宙づり感を残します。",
+  },
+  {
+    id: "s7-q10",
+    section: "s7-major-diatonic",
+    question: "トニックの代理コードは？",
+    choices: ["IIm7, IVM7", "IIIm7, VIm7", "V7, VIIm7(b5)"],
+    correctIndex: 1,
+    explanation:
+      "トニック（I）の代理は IIIm7 と VIm7。I と構成音を2つ以上共有します。",
+  },
+  {
+    id: "s7-q11",
+    section: "s7-major-diatonic",
+    question: "サブドミナントの代理コードは？",
+    choices: ["IIm7", "IIIm7", "VIm7"],
+    correctIndex: 0,
+    explanation:
+      "IIm7 は IV の代理。Key=C で Dm7 は FM7 の代理サブドミナントとして機能します。",
+  },
+  {
+    id: "s7-q12",
+    section: "s7-major-diatonic",
+    question: "II-V-I の Key=Bb での実際のコードは？",
+    choices: ["Cm7 - F7 - BbM7", "Dm7 - G7 - BbM7", "Bbm7 - Eb7 - AbM7"],
+    correctIndex: 0,
+    explanation:
+      "Key=Bb の II-V-I は Cm7(IIm7) - F7(V7) - BbM7(IM7) です。",
+  },
+  {
+    id: "s7-q13",
+    section: "s7-major-diatonic",
+    question: "Key=C で Am7 の機能は？",
+    choices: ["サブドミナント", "トニック代理（VIm7）", "ドミナント"],
+    correctIndex: 1,
+    explanation:
+      "Key=C で Am7 は VIm7＝トニック代理。CM7 と C-E-G を共有します。",
+  },
+  {
+    id: "s7-q14",
+    section: "s7-major-diatonic",
+    question: "コード進行 C - Am - F - G の機能分析は？",
+    choices: ["T - T代理 - SD - D", "T - SD - D - T", "T - D - SD - T"],
+    correctIndex: 0,
+    explanation:
+      "C(T) - Am(トニック代理) - F(SD) - G(D)。最後の D が次の T を呼ぶ王道のポップス進行です。",
+  },
+  {
+    id: "s7-q15",
+    section: "s7-major-diatonic",
+    question: "Key=C で FM7 - Em7 - Dm7 - CM7 の進行名は？",
+    choices: [
+      "サークル・プログレッション",
+      "ライン・クリシェ（下行）",
+      "バックドア・プログレッション",
+    ],
+    correctIndex: 1,
+    explanation:
+      "ベースが F-E-D-C と順次下行する下行ライン。順次進行を活かしたライン・クリシェの一種です。",
+  },
+
+  // ==========================================================================
+  // 第3章 / セクション2: 短音階上の和音（15問）
+  // ==========================================================================
+  {
+    id: "s8-q01",
+    section: "s8-minor-diatonic",
+    question: "自然的短音階（Am）のダイアトニック四和音で V 度は？",
+    choices: ["E7", "Em7", "EM7"],
+    correctIndex: 1,
+    explanation:
+      "自然的短音階の V 度は Em7（E-G-B-D）。長3度を持たずドミナント機能が弱いのが特徴です。",
+  },
+  {
+    id: "s8-q02",
+    section: "s8-minor-diatonic",
+    question: "和声的短音階で V 度が E7 になる理由は？",
+    choices: [
+      "第7音(G#)を半音上げて長3度が生まれるから",
+      "第5音を変化させるから",
+      "テンションを加えるから",
+    ],
+    correctIndex: 0,
+    explanation:
+      "和声的短音階で第7音を G→G# にすると E-G#-B-D となり、長3度を持つドミナント7th が成立します。",
+  },
+  {
+    id: "s8-q03",
+    section: "s8-minor-diatonic",
+    question: "Key=Am の IV は？",
+    choices: ["DM7", "Dm7", "D7"],
+    correctIndex: 1,
+    explanation:
+      "Key=Am の IV は D。自然的短音階の IV 度はマイナーセブンスで Dm7（D-F-A-C）です。",
+  },
+  {
+    id: "s8-q04",
+    section: "s8-minor-diatonic",
+    question: "Key=Am の bVI は？",
+    choices: ["FM7", "Fm7", "F7"],
+    correctIndex: 0,
+    explanation:
+      "Am の bVI 度は F。メジャーセブンスで FM7（F-A-C-E）。長調 C の IV に相当します。",
+  },
+  {
+    id: "s8-q05",
+    section: "s8-minor-diatonic",
+    question: "Key=Am の bVII は？",
+    choices: ["GM7", "G7", "Gm7"],
+    correctIndex: 1,
+    explanation:
+      "Am の bVII 度は G。自然的短音階上は G7（G-B-D-F）。短調・モーダルな進行で頻出します。",
+  },
+  {
+    id: "s8-q06",
+    section: "s8-minor-diatonic",
+    question: "短調での正格終止で最も強い解決感を持つのは？",
+    choices: ["V7→Im", "Vm7→Im", "bVII→Im"],
+    correctIndex: 0,
+    explanation:
+      "V7→Im が短調でも最強の解決。和声的短音階由来の V7（導音つき）を使うのが要点です。",
+  },
+  {
+    id: "s8-q07",
+    section: "s8-minor-diatonic",
+    question: "短調の偽終止は？",
+    choices: ["V7→bVII", "V7→IV", "V7→bVI"],
+    correctIndex: 2,
+    explanation:
+      "短調の偽終止は V7→bVI。Im に解決すると思わせて bVI に進みます（Key=Am なら E7→FM7）。",
+  },
+  {
+    id: "s8-q08",
+    section: "s8-minor-diatonic",
+    question: "短調の II-V-I を Key=Am で書くと？",
+    choices: ["Bm7(b5) - E7 - Am7", "Bm7 - E7 - Am7", "Dm7 - G7 - Am7"],
+    correctIndex: 0,
+    explanation:
+      "短調の II は m7(b5)。Bm7(b5) - E7 - Am7 が短調の II-V-I です。",
+  },
+  {
+    id: "s8-q09",
+    section: "s8-minor-diatonic",
+    question: "短調で IIm7(b5) を使う理由は？",
+    choices: [
+      "自然的短音階の II 度が m7(b5) だから",
+      "dim7 の方が響きが良いから",
+      "長調と区別するため",
+    ],
+    correctIndex: 0,
+    explanation:
+      "自然的短音階の II 度上の和音は B-D-F-A＝m7(b5)。だから短調の II は m7(b5) を使います。",
+  },
+  {
+    id: "s8-q10",
+    section: "s8-minor-diatonic",
+    question: "Key=Dm の II-V-I は？",
+    choices: ["Em7(b5) - A7 - Dm7", "Fm7 - Bb7 - Dm7", "Gm7 - C7 - Dm7"],
+    correctIndex: 0,
+    explanation:
+      "Key=Dm の II-V-I は Em7(b5)（IIm7b5）- A7（V7）- Dm7（Im7）です。",
+  },
+  {
+    id: "s8-q11",
+    section: "s8-minor-diatonic",
+    question: "Key=Am で FM7 - G7 - Am の進行のローマ数字分析は？",
+    choices: ["IV - V - Im", "bVI - bVII - Im", "VI - VII - Im"],
+    correctIndex: 1,
+    explanation:
+      "Am の F は bVI、G は bVII。bVI-bVII-Im はロック／ポップスで頻出の力強い進行です。",
+  },
+  {
+    id: "s8-q12",
+    section: "s8-minor-diatonic",
+    question: "Key=Am で Am - G - F - E7 の進行名は？",
+    choices: ["アンダルシア進行", "カノン進行", "逆循環"],
+    correctIndex: 0,
+    explanation:
+      "Im-bVII-bVI-V7 はアンダルシア（フラメンコ）進行。スパニッシュ感のある下行進行です。",
+  },
+  {
+    id: "s8-q13",
+    section: "s8-minor-diatonic",
+    question: "短調で bIIIM7 が持つ機能は？",
+    choices: ["ドミナント", "トニック代理", "サブドミナント代理"],
+    correctIndex: 1,
+    explanation:
+      "bIIIM7 は Im と構成音を2つ共有するためトニック代理。Key=Am なら CM7（C-E-G-B）です。",
+  },
+  {
+    id: "s8-q14",
+    section: "s8-minor-diatonic",
+    question: "Key=Cm の bVI の和音は？",
+    choices: ["AbM7", "Am7", "A7"],
+    correctIndex: 0,
+    explanation:
+      "Cm の bVI 度は Ab。自然的短音階上はメジャーセブンスで AbM7（Ab-C-Eb-G）です。",
+  },
+  {
+    id: "s8-q15",
+    section: "s8-minor-diatonic",
+    question: "短調の bVII（Key=Am の G7）はどの音階由来か？",
+    choices: ["自然的短音階", "和声的短音階", "旋律的短音階"],
+    correctIndex: 0,
+    explanation:
+      "bVII（Key=Am の G7）は第7音を上げない自然的短音階由来。和声的短音階だと G# になり消えます。",
+  },
+
+  // ==========================================================================
+  // 第3章 / セクション3: 平行・同主調と総合問題（10問）
+  // ==========================================================================
+  {
+    id: "s9-q01",
+    section: "s9-key-relations",
+    question: "C メジャーと A マイナーの関係は？",
+    choices: ["同主調", "平行調", "属調"],
+    correctIndex: 1,
+    explanation:
+      "同じ調号を持つ長調と短調が平行調。C major と A minor はともに調号なしです。",
+  },
+  {
+    id: "s9-q02",
+    section: "s9-key-relations",
+    question: "Eb major の平行調は？",
+    choices: ["Cm", "Ebm", "Fm"],
+    correctIndex: 0,
+    explanation:
+      "長調の平行調は短3度下の短調。Eb→C で Cm が平行調になります（フラット3つを共有）。",
+  },
+  {
+    id: "s9-q03",
+    section: "s9-key-relations",
+    question: "C メジャーと C マイナーの関係は？",
+    choices: ["平行調", "同主調", "近親調"],
+    correctIndex: 1,
+    explanation:
+      "主音が同じ長調と短調は同主調（パラレルキー）。C major と C minor の関係です。",
+  },
+  {
+    id: "s9-q04",
+    section: "s9-key-relations",
+    question: "サブドミナント・マイナーとは？",
+    choices: [
+      "同主短調の IV 度の和音を長調で借用すること",
+      "短調の II 度を使うこと",
+      "ドミナントを短調化すること",
+    ],
+    correctIndex: 0,
+    explanation:
+      "Key=C で Fm7 を使うのがサブドミナント・マイナー。同主短調 Cm から IVm を借用する技法です。",
+  },
+  {
+    id: "s9-q05",
+    section: "s9-key-relations",
+    question: "Key=C で FM7→Fm7→CM7 の進行で Fm7 は何？",
+    choices: ["サブドミナント・マイナー", "セカンダリードミナント", "パッシングコード"],
+    correctIndex: 0,
+    explanation:
+      "FM7(IV)→Fm7(IVm)→CM7(I)。Fm7 は Cm から借りたサブドミナント・マイナーで哀愁ある響きを与えます。",
+  },
+  {
+    id: "s9-q06",
+    section: "s9-key-relations",
+    question: "Key=C で使えるサブドミナント・マイナーの代表は？",
+    choices: [
+      "Gm7, BbM7, Em7(b5)",
+      "Fm7, AbM7, Dm7(b5), Bb7",
+      "Am7, FM7, Dm7",
+    ],
+    correctIndex: 1,
+    explanation:
+      "同主短調 Cm のダイアトニックから借用。Fm7(IVm)・AbM7(bVI)・Dm7(b5)・Bb7(bVII) などが代表です。",
+  },
+  {
+    id: "s9-q07",
+    section: "s9-key-relations",
+    question: "コード進行 CM7 - Am7 - Dm7 - G7 のローマ数字分析（Key=C）は？",
+    choices: [
+      "IM7 - VIm7 - IIm7 - V7",
+      "IM7 - IIIm7 - IVm7 - V7",
+      "IM7 - VIm7 - Vm7 - IV7",
+    ],
+    correctIndex: 0,
+    explanation:
+      "いわゆる1625進行。T - トニック代理(VI) - SD(II) - D(V) の循環的な基本パターンです。",
+  },
+  {
+    id: "s9-q08",
+    section: "s9-key-relations",
+    question: "Key=G で Am7 - D7 - GM7 は何の進行？",
+    choices: ["IV-V-I", "II-V-I", "III-VI-I"],
+    correctIndex: 1,
+    explanation:
+      "Am7=IIm7、D7=V7、GM7=IM7。Key=G での II-V-I（ツー・ファイブ・ワン）です。",
+  },
+  {
+    id: "s9-q09",
+    section: "s9-key-relations",
+    question:
+      "Just The Two of Us 進行（AbM7-G7-Cm7-BbM7）の Key=Cm での分析は？",
+    choices: [
+      "bVIM7 - V7 - Im7 - bVIIM7",
+      "IVM7 - III7 - VIm7 - VM7",
+      "bVIM7 - V7 - Im7 - IVM7",
+    ],
+    correctIndex: 0,
+    explanation:
+      "AbM7(bVI) - G7(V) - Cm7(Im) - BbM7(bVII)。bVI/bVII はナチュラルマイナー、V7 は和声的短音階由来です。",
+  },
+  {
+    id: "s9-q10",
+    section: "s9-key-relations",
+    question: "Key=C で AbM7（bVIM7）はどこから借用したコードか？",
+    choices: ["同主短調 Cm", "平行調 Am", "属調 G"],
+    correctIndex: 0,
+    explanation:
+      "AbM7（bVIM7）は同主短調 Cm からのモーダル・インターチェンジ（借用和音）です。",
   },
 ];
 
