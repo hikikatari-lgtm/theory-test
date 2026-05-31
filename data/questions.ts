@@ -38,6 +38,11 @@ export const CHAPTERS: Chapter[] = [
     title: "第1章: 基礎理論",
     description: "音名・音程・調・音階の基礎を固める",
   },
+  {
+    id: "ch2",
+    title: "第2章: コード／テンション",
+    description: "和音の構成とテンションの仕組み",
+  },
 ];
 
 export const SECTIONS: Section[] = [
@@ -58,6 +63,24 @@ export const SECTIONS: Section[] = [
     chapter: "ch1",
     title: "総合問題",
     description: "音程と調の知識を組み合わせた応用",
+  },
+  {
+    id: "s4-chords",
+    chapter: "ch2",
+    title: "コードの構成",
+    description: "三和音・四和音・コードネームの読み方",
+  },
+  {
+    id: "s5-tensions",
+    chapter: "ch2",
+    title: "テンション",
+    description: "9th・11th・13th とその解決",
+  },
+  {
+    id: "s6-chord-mixed",
+    chapter: "ch2",
+    title: "総合問題",
+    description: "コードとテンションの知識を組み合わせた応用",
   },
 ];
 
@@ -440,6 +463,394 @@ export const questions: Question[] = [
     correctIndex: 0,
     explanation:
       "同じ調号を持つ長調と短調は平行調の関係。同主調は主音が同じ（C major と C minor）関係を指します。",
+  },
+
+  // ==========================================================================
+  // 第2章 / セクション1: コードの構成（15問）
+  // ==========================================================================
+  {
+    id: "s4-q01",
+    section: "s4-chords",
+    question: "長三和音（メジャートライアド）の構成音程は？",
+    choices: ["短3度＋長3度", "長3度＋短3度", "長3度＋長3度"],
+    correctIndex: 1,
+    explanation:
+      "長三和音は下から長3度＋短3度。例: C-E-G。C→E が長3度（半音4つ）、E→G が短3度（半音3つ）です。",
+  },
+  {
+    id: "s4-q02",
+    section: "s4-chords",
+    question: "減三和音（ディミニッシュトライアド）の構成音程は？",
+    choices: ["短3度＋短3度", "長3度＋短3度", "短3度＋長3度"],
+    correctIndex: 0,
+    explanation:
+      "減三和音は短3度＋短3度。例: B-D-F。根音から5度がトライトーン（減5度）になります。",
+  },
+  {
+    id: "s4-q03",
+    section: "s4-chords",
+    question: "増三和音（オーギュメントトライアド）の構成音程は？",
+    choices: ["長3度＋短3度", "短3度＋長3度", "長3度＋長3度"],
+    correctIndex: 2,
+    explanation:
+      "増三和音は長3度＋長3度。例: C-E-G#。根音から5度が増5度になり、対称的な響きを持ちます。",
+  },
+  {
+    id: "s4-q04",
+    section: "s4-chords",
+    question: "Cm（C マイナー）の構成音は？",
+    choices: ["C, E, G", "C, Eb, G", "C, Eb, Gb"],
+    correctIndex: 1,
+    explanation:
+      "Cm は短三和音で C-Eb-G。長三和音 C-E-G の3rd を半音下げた形です。",
+  },
+  {
+    id: "s4-q05",
+    section: "s4-chords",
+    question: "和音の第1転回形とは？",
+    choices: ["ルートがベース", "3rd がベース", "5th がベース"],
+    correctIndex: 1,
+    explanation:
+      "第1転回形は3rd が最低音に来る形。C major なら E-G-C。第2転回形は5th がベースになります。",
+  },
+  {
+    id: "s4-q06",
+    section: "s4-chords",
+    question: "CM7（メジャーセブンス）の構成音は？",
+    choices: ["C, E, G, Bb", "C, E, G, B", "C, Eb, G, B"],
+    correctIndex: 1,
+    explanation:
+      "CM7 は長三和音＋長7度で C-E-G-B。7th が Bb だとドミナント7th の C7 になります。",
+  },
+  {
+    id: "s4-q07",
+    section: "s4-chords",
+    question: "Cm7（マイナーセブンス）の構成音は？",
+    choices: ["C, E, G, Bb", "C, Eb, G, Bb", "C, Eb, G, B"],
+    correctIndex: 1,
+    explanation:
+      "Cm7 は短三和音＋短7度で C-Eb-G-Bb。マイナーの落ち着いた響きの基本和音です。",
+  },
+  {
+    id: "s4-q08",
+    section: "s4-chords",
+    question: "C7（ドミナントセブンス）の構成は？",
+    choices: ["長三和音＋長7度", "長三和音＋短7度", "短三和音＋短7度"],
+    correctIndex: 1,
+    explanation:
+      "C7 は長三和音＋短7度で C-E-G-Bb。長7度なら CM7。属和音として強い解決感を持ちます。",
+  },
+  {
+    id: "s4-q09",
+    section: "s4-chords",
+    question: "Cm7(b5) の別名は？",
+    choices: ["オーギュメントセブンス", "ハーフディミニッシュ", "ディミニッシュセブンス"],
+    correctIndex: 1,
+    explanation:
+      "Cm7(b5) はハーフディミニッシュ（半減七）。C-Eb-Gb-Bb。7th も半音下げると dim7 になります。",
+  },
+  {
+    id: "s4-q10",
+    section: "s4-chords",
+    question: "Cdim7 の構成音程の特徴は？",
+    choices: ["すべて短3度", "長3度＋短3度＋短3度", "短3度＋長3度＋短3度"],
+    correctIndex: 0,
+    explanation:
+      "dim7 はすべての音が短3度（半音3つ）間隔。C-Eb-Gb-Bbb(=A)。完全に対称な和音です。",
+  },
+  {
+    id: "s4-q11",
+    section: "s4-chords",
+    question: "C/E（スラッシュコード）はどういう意味？",
+    choices: ["E コードで C がベース音", "C コードで E がベース音", "C と E を同時に弾く"],
+    correctIndex: 1,
+    explanation:
+      "C/E は「C コードで E がベース音」。和音は C-E-G のまま、最低音だけを E にした第1転回形です。",
+  },
+  {
+    id: "s4-q12",
+    section: "s4-chords",
+    question: "オープン・ボイシングとは？",
+    choices: [
+      "構成音を1オクターブ以上に広げた配置",
+      "すべての音を密集させた配置",
+      "ルートを省略した配置",
+    ],
+    correctIndex: 0,
+    explanation:
+      "オープン・ボイシングは構成音を1オクターブ以上に広げた配置。密集形はクローズド・ボイシングと呼びます。",
+  },
+  {
+    id: "s4-q13",
+    section: "s4-chords",
+    question: "sus4 コードの構成は？",
+    choices: [
+      "ルート＋長3度＋完全5度",
+      "ルート＋完全4度＋完全5度",
+      "ルート＋短3度＋完全5度",
+    ],
+    correctIndex: 1,
+    explanation:
+      "sus4（suspended 4th）は3度の代わりに完全4度を使う和音。Csus4 = C-F-G。長短の性格を持ちません。",
+  },
+  {
+    id: "s4-q14",
+    section: "s4-chords",
+    question: "C6 の構成音は？",
+    choices: ["C, E, G, Ab", "C, E, G, A", "C, E, G, B"],
+    correctIndex: 1,
+    explanation:
+      "C6 は長三和音＋長6度で C-E-G-A。Am7（A-C-E-G）と同じ構成音の転回関係にあります。",
+  },
+  {
+    id: "s4-q15",
+    section: "s4-chords",
+    question: "Caug（C+、増三和音）の構成音は？",
+    choices: ["C, E, G", "C, E, G#", "C, Eb, G#"],
+    correctIndex: 1,
+    explanation:
+      "Caug は長3度を2つ重ねた C-E-G#。長三和音の5th を半音上げた形です。",
+  },
+
+  // ==========================================================================
+  // 第2章 / セクション2: テンション（15問）
+  // ==========================================================================
+  {
+    id: "s5-q01",
+    section: "s5-tensions",
+    question: "テンションノートに含まれないのは？",
+    choices: ["9th", "13th", "5th"],
+    correctIndex: 2,
+    explanation:
+      "テンションはコードトーン(1,3,5,7)の上に3度ずつ積んだ 9th・11th・13th。5th はコードトーンです。",
+  },
+  {
+    id: "s5-q02",
+    section: "s5-tensions",
+    question: "ナチュラルテンションとオルタードテンションの違いは？",
+    choices: [
+      "ダイアトニックスケール上にあるかないか",
+      "音が高いか低いか",
+      "メジャーかマイナーか",
+    ],
+    correctIndex: 0,
+    explanation:
+      "そのコードのスケール上に自然にあるのがナチュラル、半音変化させて外れたものがオルタードテンションです。",
+  },
+  {
+    id: "s5-q03",
+    section: "s5-tensions",
+    question: "C7 のオルタードテンションは？",
+    choices: ["b9, #9, #11, b13", "9, 11, 13", "b9, 11, b13"],
+    correctIndex: 0,
+    explanation:
+      "ドミナント7th のオルタードテンションは b9・#9・#11・b13 の4つ。オルタードスケール由来の緊張音です。",
+  },
+  {
+    id: "s5-q04",
+    section: "s5-tensions",
+    question: "CM7 のアヴォイドノートは？",
+    choices: ["11th(F)", "9th(D)", "13th(A)"],
+    correctIndex: 0,
+    explanation:
+      "CM7 の 11th(F) は3rd(E)の半音上でぶつかるためアヴォイドノート。9th(D)・13th(A)は使えます。",
+  },
+  {
+    id: "s5-q05",
+    section: "s5-tensions",
+    question: "テンション・リゾルブとは？",
+    choices: [
+      "テンションが隣のコードトーンに解決すること",
+      "テンションを追加すること",
+      "テンションを省略すること",
+    ],
+    correctIndex: 0,
+    explanation:
+      "テンション・リゾルブはテンションが半音または全音で隣のコードトーンへ解決する動きのことです。",
+  },
+  {
+    id: "s5-q06",
+    section: "s5-tensions",
+    question: "9th のリゾルブ先は？",
+    choices: ["ルート", "3rd", "5th"],
+    correctIndex: 0,
+    explanation:
+      "9th は下行してルートへ解決します。CM7 なら D→C。テンションは下のコードトーンへ落ち着くのが基本です。",
+  },
+  {
+    id: "s5-q07",
+    section: "s5-tensions",
+    question: "13th のリゾルブ先は？",
+    choices: ["5th", "3rd", "ルート"],
+    correctIndex: 0,
+    explanation:
+      "13th は下行して5th へ解決します。C コードなら A→G という動きになります。",
+  },
+  {
+    id: "s5-q08",
+    section: "s5-tensions",
+    question: "C9 というコードに含まれる音は？",
+    choices: ["C, E, G, B, D", "C, E, G, Bb, D", "C, Eb, G, Bb, D"],
+    correctIndex: 1,
+    explanation:
+      "C9 は C7＋9th。ドミナント7th(C-E-G-Bb)に9th(D)を加えた C-E-G-Bb-D です。",
+  },
+  {
+    id: "s5-q09",
+    section: "s5-tensions",
+    question: "Cm11 に含まれるテンションは？",
+    choices: ["9th と 11th", "11th のみ", "9th のみ"],
+    correctIndex: 0,
+    explanation:
+      "Cm11 = Cm7＋9th＋11th。テンションコードは下位のテンション(9th)も含むのが通例です。C-Eb-G-Bb-D-F。",
+  },
+  {
+    id: "s5-q10",
+    section: "s5-tensions",
+    question: "Csus4 と C11 の違いは？",
+    choices: ["C11 は7th と9th も含む", "同じコード", "Csus4 の方が音が多い"],
+    correctIndex: 0,
+    explanation:
+      "Csus4 は C-F-G の3音。C11 はそこに7th(Bb)と9th(D)も加わります（3rd は省略されがち）。",
+  },
+  {
+    id: "s5-q11",
+    section: "s5-tensions",
+    question: "add9 とは？",
+    choices: ["7th なしで9th を加える", "7th ありで9th を加える", "9th の代わりに2nd を使う"],
+    correctIndex: 0,
+    explanation:
+      "add9 は7th を含めず三和音に9th だけ足す和音。Cadd9 = C-E-G-D。7th を含む C9 とは別物です。",
+  },
+  {
+    id: "s5-q12",
+    section: "s5-tensions",
+    question: "Cm7 で自然に使えるナチュラルテンションは？",
+    choices: ["9th と 11th", "b9 と b13", "#11 のみ"],
+    correctIndex: 0,
+    explanation:
+      "マイナー7th（ドリアン／エオリアン上）では 9th と 11th がナチュラルテンションとして自然に使えます。",
+  },
+  {
+    id: "s5-q13",
+    section: "s5-tensions",
+    question: "#11 がナチュラルテンションとして自然に使えるコードは？",
+    choices: ["メジャー7th（リディアン）", "マイナー7th", "sus4"],
+    correctIndex: 0,
+    explanation:
+      "メジャー7th をリディアンで捉えると #11 がナチュラルテンションになり、アヴォイドの11thを回避できます。",
+  },
+  {
+    id: "s5-q14",
+    section: "s5-tensions",
+    question: "13th は度数でいうとどの音？",
+    choices: ["6度を1オクターブ上げた音", "7度", "5度"],
+    correctIndex: 0,
+    explanation:
+      "13th は6度を1オクターブ上げた音。同様に 9th=2度、11th=4度のオクターブ上にあたります。",
+  },
+  {
+    id: "s5-q15",
+    section: "s5-tensions",
+    question: "テンションを積む基本ルールは？",
+    choices: ["コードトーンの上に3度ずつ堆積", "半音ずつ積む", "5度ずつ積む"],
+    correctIndex: 0,
+    explanation:
+      "テンションは7th の上にさらに3度ずつ積んで 9th→11th→13th と得られます。3度堆積がコードの基本原理です。",
+  },
+
+  // ==========================================================================
+  // 第2章 / セクション3: 総合問題（10問）
+  // ==========================================================================
+  {
+    id: "s6-q01",
+    section: "s6-chord-mixed",
+    question: "Cm7 のルートを C から Eb に変えると何コード？",
+    choices: ["Eb6", "EbM7", "Cm7 のまま"],
+    correctIndex: 0,
+    explanation:
+      "Cm7(C-Eb-G-Bb)を Eb から並べ替えると Eb-G-Bb-C = Eb6。m7 と短3度上の6th は同じ構成音（転回関係）です。",
+  },
+  {
+    id: "s6-q02",
+    section: "s6-chord-mixed",
+    question: "II-V-I の Key=C での II は？",
+    choices: ["Dm7", "Em7", "FM7"],
+    correctIndex: 0,
+    explanation:
+      "C メジャーのダイアトニックで ii は Dm7。II-V-I は Dm7-G7-CM7 という進行になります。",
+  },
+  {
+    id: "s6-q03",
+    section: "s6-chord-mixed",
+    question: "II-V-I の Key=C での V は？",
+    choices: ["Gm7", "G7", "GM7"],
+    correctIndex: 1,
+    explanation:
+      "V はドミナント7th の G7（G-B-D-F）。トライトーン B-F が CM7 へ強く解決します。",
+  },
+  {
+    id: "s6-q04",
+    section: "s6-chord-mixed",
+    question: "G7(b9) の構成音は？",
+    choices: ["G, B, D, F, A", "G, B, D, F, Ab", "G, Bb, D, F, Ab"],
+    correctIndex: 1,
+    explanation:
+      "G7 = G-B-D-F。b9 は9th(A)を半音下げた Ab。よって G-B-D-F-Ab です。",
+  },
+  {
+    id: "s6-q05",
+    section: "s6-chord-mixed",
+    question: "dim7 コードの転回形が3つとも別の dim7 に見える理由は？",
+    choices: ["すべて等間隔（短3度）だから", "すべて長3度だから", "ルートが変わるから"],
+    correctIndex: 0,
+    explanation:
+      "dim7 は短3度の積み重ねで完全に対称。どの音を最低音にしても同じ短3度堆積に見え、実質3種類しかありません。",
+  },
+  {
+    id: "s6-q06",
+    section: "s6-chord-mixed",
+    question: "G7 が持つトライトーンの2音は？",
+    choices: ["B と F", "G と D", "B と D"],
+    correctIndex: 0,
+    explanation:
+      "G7（G-B-D-F）の3rd(B)と7th(F)が減5度＝トライトーン。これが C の E と C へ解決して終止感を生みます。",
+  },
+  {
+    id: "s6-q07",
+    section: "s6-chord-mixed",
+    question: "Key=C で CM7 のトニック代理として使えるのは？",
+    choices: ["Am7", "Dm7", "G7"],
+    correctIndex: 0,
+    explanation:
+      "Am7(A-C-E-G)は CM7(C-E-G-B)と C・E・G を共有するトニック代理（vi）。同じ機能で使えます。",
+  },
+  {
+    id: "s6-q08",
+    section: "s6-chord-mixed",
+    question: "ドミナント G7 を Db7 に置き換える技法は？",
+    choices: ["裏コード（トライトーン代理）", "クリシェ", "ペダルポイント"],
+    correctIndex: 0,
+    explanation:
+      "裏コード（トライトーン代理）。G7 と Db7 はトライトーン(B-F = Cb-F)を共有し、ベースが半音で下行します。",
+  },
+  {
+    id: "s6-q09",
+    section: "s6-chord-mixed",
+    question: "sus4 の典型的な解決は？",
+    choices: ["4th が 3rd へ下がる", "5th へ上がる", "ルートへ下がる"],
+    correctIndex: 0,
+    explanation:
+      "sus4 は宙づりの4th が3rd へ下行して解決します。Csus4(C-F-G)→C(C-E-G) で F→E という動きです。",
+  },
+  {
+    id: "s6-q10",
+    section: "s6-chord-mixed",
+    question: "add9 と 9th コード（C9）の違いは？",
+    choices: ["add9 は7th を含まない", "同じ意味", "9th コードは三和音"],
+    correctIndex: 0,
+    explanation:
+      "add9 は三和音＋9th で7th なし(Cadd9=C-E-G-D)。一方 C9 は7th も含む(C-E-G-Bb-D)四和音以上です。",
   },
 ];
 
